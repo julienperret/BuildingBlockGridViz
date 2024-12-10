@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Paris Building Blocks with Gridviz</title>
+        <link rel="stylesheet" href="./demos.css" />
+    </head>
+    <body>
+        <div id="viz-container"></div>
+        <div id="panel-toggle-btn" class="panel-toggle-btn">☰</div>
+        <div id="panel" class="panel">
+            <span>
+                <div id="layer">
+                    <div class="layer-group">
+                        <h2 class="first-title">Shape Factor</h2>
+                        <div class="radio-group">
+                            <div class="panel-item">
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf2024" value="sf2024" checked />
+                                    <label for="sf2024">2024</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf1937" value="sf1937" />
+                                    <label for="sf1937">1937</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf1925" value="sf1925" />
+                                    <label for="sf1925">1925</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf1900" value="sf1900" />
+                                    <label for="sf1900">1900</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf1888" value="sf1888" />
+                                    <label for="sf1888">1888</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf1878" value="sf1878" />
+                                    <label for="sf1878">1878</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="sf1868" value="sf1868" />
+                                    <label for="sf1868">1868</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layer-group">
+                        <h2 class="first-title">Block Area (mean building block area)</h2>
+                        <div class="radio-group">
+                            <div class="panel-item">
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba2024" value="ba2024" />
+                                    <label for="ba2024">2024</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba1937" value="ba1937" />
+                                    <label for="ba1937">1937</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba1925" value="ba1925" />
+                                    <label for="ba1925">1925</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba1900" value="ba1900" />
+                                    <label for="ba1900">1900</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba1888" value="ba1888" />
+                                    <label for="ba1888">1888</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba1878" value="ba1878" />
+                                    <label for="ba1878">1878</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="ba1868" value="ba1868" />
+                                    <label for="ba1868">1868</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layer-group">
+                        <h2 class="first-title">Block Azimuth (mean building block orientation btw 0-180)</h2>
+                        <div class="radio-group">
+                            <div class="panel-item">
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz2024" value="baz2024" />
+                                    <label for="baz2024">2024</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz1937" value="baz1937" />
+                                    <label for="baz1937">1937</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz1925" value="baz1925" />
+                                    <label for="baz1925">1925</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz1900" value="baz1900" />
+                                    <label for="baz1900">1900</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz1888" value="baz1888" />
+                                    <label for="baz1888">1888</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz1878" value="baz1878" />
+                                    <label for="baz1878">1878</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="baz1868" value="baz1868" />
+                                    <label for="baz1868">1868</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layer-group">
+                        <h2 class="first-title">Block Orientation (mean building block orientation btw 0-90)</h2>
+                        <div class="radio-group">
+                            <div class="panel-item">
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo2024" value="bo2024" />
+                                    <label for="bo2024">2024</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo1937" value="bo1937" />
+                                    <label for="bo1937">1937</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo1925" value="bo1925" />
+                                    <label for="bo1925">1925</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo1900" value="bo1900" />
+                                    <label for="bo1900">1900</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo1888" value="bo1888" />
+                                    <label for="bo1888">1888</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo1878" value="bo1878" />
+                                    <label for="bo1878">1878</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="bo1868" value="bo1868" />
+                                    <label for="bo1868">1868</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layer-group">
+                        <h2 class="first-title">Cell Cover (total area inside a building block)</h2>
+                        <div class="radio-group">
+                            <div class="panel-item">
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc2024" value="cc2024" />
+                                    <label for="cc2024">2024</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc1937" value="cc1937" />
+                                    <label for="cc1937">1937</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc1925" value="cc1925" />
+                                    <label for="cc1925">1925</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc1900" value="cc1900" />
+                                    <label for="cc1900">1900</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc1888" value="cc1888" />
+                                    <label for="cc1888">1888</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc1878" value="cc1878" />
+                                    <label for="cc1878">1878</label>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" name="layer" id="cc1868" value="cc1868" />
+                                    <label for="cc1868">1868</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+		    
+                </div>
+            </span>
+        </div>
+
+        <script src="./gridviz.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/gridviz@3.0.16"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/gridviz-eurostat@2.0.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-color@3"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-interpolate@3"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+        <script>
+            document.getElementById('panel-toggle-btn').addEventListener('click', function () {
+                const panel = document.getElementById('panel')
+                const style = window.getComputedStyle(panel)
+                if (style.display === 'none') {
+                    panel.style.display = 'block' // Show the panel
+                } else {
+                    panel.style.display = 'none' // Hide the panel
+                }
+            })
+            function getClass(v, breaks) {
+                if (!breaks) return
+                if (breaks.length == 0) return 0
+                if (v <= breaks[0]) return 0
+                for (let i = 1; i < breaks.length; i++) if (breaks[i - 1] < v && v <= breaks[i]) return i
+                return breaks.length
+            }
+            //define map with initial view
+            const map = new gridviz.Map(document.getElementById('viz-container'), {
+                x: 3760000,
+                y: 2889000,
+                z: 20,
+            }).addZoomButtons()
+
+            //define background layer
+            const backgroundLayer1 = new gridviz.BackgroundLayer(
+                gridviz_eurostat.giscoBackgroundLayer('GreyEarth', 7, 'EPSG3035', {
+                    filterColor: () => '#ffffffd3',
+                })
+            )
+
+            //define background layer
+            const backgroundLayer2 = new gridviz.BackgroundLayer({
+                url: 'https://raw.githubusercontent.com/jgaffuri/mbxyz/main/pub/elevation_shading/',
+                resolutions: Array.from({ length: 9 }, (_, i) => 28.00132289714475 * Math.pow(2, 10 - i)),
+                origin: [0, 6000000],
+                filterColor: (z) => '#ffffff77',
+            })
+
+
+            // define datasets
+            const dataset1868 = new gridviz.CSVGrid(
+                map,
+                'grid100m_1868.csv',
+                100
+            )
+            const dataset1878 = new gridviz.CSVGrid(
+                map,
+                'grid100m_1878.csv',
+                100
+            )
+            const dataset1888 = new gridviz.CSVGrid(
+                map,
+                'grid100m_1888.csv',
+                100
+            )
+            const dataset1900 = new gridviz.CSVGrid(
+                map,
+                'grid100m_1900.csv',
+                100
+            )
+            const dataset1925 = new gridviz.CSVGrid(
+                map,
+                'grid100m_1925.csv',
+                100
+            )
+            const dataset1937 = new gridviz.CSVGrid(
+                map,
+                'grid100m_1937.csv',
+                100
+            )
+            const dataset2024 = new gridviz.CSVGrid(
+                map,
+                'grid100m_2024.csv',
+                100
+            )
+            const datasets = new Map([
+                ['1868', dataset1868],
+                ['1878', dataset1878],
+                ['1888', dataset1888],
+                ['1900', dataset1900],
+                ['1925', dataset1925],
+                ['1937', dataset1937],
+                ['2024', dataset2024],
+            ]);
+            //define color for each cell
+            const sfColorFunction = (cell) => {
+                if (cell.shape_factor > 0.8) return '#993404'
+                else if (cell.shape_factor > 0.6) return '#d95f0e'
+                else if (cell.shape_factor > 0.4) return '#fe9929'
+                else if (cell.shape_factor > 0.2) return '#fec44f'
+                else if (cell.shape_factor > 0.1) return '#fee391'
+                else return '#ffffd4'
+            }
+            //define style
+            const sfStyle = new gridviz.ShapeColorSizeStyle({ color: sfColorFunction })
+            const baColorFunction = (cell) => {//magma
+                if (cell.area > 100000) return '#000004'
+                else if (cell.area > 10000) return '#50127b'
+                else if (cell.area > 1000) return '#b6367a'
+                else if (cell.area > 100) return '#fb8761'
+                else if (cell.area > 10) return '#fcfdbf'
+                else return '#ffffd4'
+            }
+            //define style
+            const baStyle = new gridviz.ShapeColorSizeStyle({ color: baColorFunction })
+            const bazColorFunction = (cell) => {//spectral
+                if (cell.az > 160) return '#2b83ba'
+                else if (cell.az > 140) return '#6bb0af'
+                else if (cell.az > 120) return '#abdda4'
+                else if (cell.az > 100) return '#d5eeb2'
+                else if (cell.az > 80) return '#ffffbf'
+                else if (cell.az > 60) return '#fed790'
+                else if (cell.az > 40) return '#fdae61'
+                else if (cell.az > 20) return '#ea643f'
+                else return '#d7191c'
+            }
+            //define style
+            const bazStyle = new gridviz.ShapeColorSizeStyle({ color: bazColorFunction })
+            const boColorFunction = (cell) => {
+                if (cell.az2 > 80) return '#7a0403'
+                else if (cell.az2 > 60) return '#fb7e21'
+                else if (cell.az2 > 40) return '#a4fc3c'
+                else if (cell.az2 > 20) return '#28bceb'
+                else return '#30123b'
+            }
+            //define style
+            const boStyle = new gridviz.ShapeColorSizeStyle({ color: boColorFunction })
+            const ccColorFunction = (cell) => {
+                if (cell.sum > 8000) return '#440154'
+                else if (cell.sum > 6000) return '#3b528b'
+                else if (cell.sum > 4000) return '#21908d'
+                else if (cell.sum > 2000) return '#5dc963'
+                else return '#fde725'
+            }
+            //define style
+            const ccStyle = new gridviz.ShapeColorSizeStyle({ color: ccColorFunction })
+
+            // update grid layers
+            const update = () => {
+                //read GUI selection
+                const layerCode = document.querySelector('input[name="layer"]:checked').value
+
+                //remove layers
+                map.layers = []
+
+                //define layer according to selected options (below)
+                let gridLayers = []
+
+                //select layer and style
+                if (layerCode === 'sf1868' || layerCode === 'sf1878' || layerCode === 'sf1888' || layerCode === 'sf1900' || layerCode === 'sf1925' || layerCode === 'sf1937' || layerCode === 'sf2024') {
+                    const date = layerCode.replace('sf', '')
+                    const layerCode_ = 'Shape_factor ' + date
+                    console.log("date=",date,"layercode=",layerCode,"dataset=",datasets.get(date))
+                    //define style
+                    const styles = [sfStyle]
+                    //define grid layer
+                    gridLayers.push(new gridviz.GridLayer(datasets.get(date), styles))
+                } else if (layerCode === 'ba1868' || layerCode === 'ba1878' || layerCode === 'ba1888' || layerCode === 'ba1900' || layerCode === 'ba1925' || layerCode === 'ba1937' || layerCode === 'ba2024') {
+                    const date = layerCode.replace('ba', '')
+                    const layerCode_ = 'Block_area ' + date
+                    console.log("date=",date,"layercode=",layerCode,"dataset=",datasets.get(date))
+                    //define style
+                    const styles = [baStyle]
+                    //define grid layer
+                    gridLayers.push(new gridviz.GridLayer(datasets.get(date), styles))
+                } else if (layerCode === 'baz1868' || layerCode === 'baz1878' || layerCode === 'baz1888' || layerCode === 'baz1900' || layerCode === 'baz1925' || layerCode === 'baz1937' || layerCode === 'baz2024') {
+                    const date = layerCode.replace('baz', '')
+                    const layerCode_ = 'Block_Azimuth ' + date
+                    console.log("date=",date,"layercode=",layerCode,"dataset=",datasets.get(date))
+                    //define style
+                    const styles = [bazStyle]
+                    //define grid layer
+                    gridLayers.push(new gridviz.GridLayer(datasets.get(date), styles))
+                } else if (layerCode === 'bo1868' || layerCode === 'bo1878' || layerCode === 'bo1888' || layerCode === 'bo1900' || layerCode === 'bo1925' || layerCode === 'bo1937' || layerCode === 'bo2024') {
+                    const date = layerCode.replace('bo', '')
+                    const layerCode_ = 'Block_Orientation ' + date
+                    console.log("date=",date,"layercode=",layerCode,"dataset=",datasets.get(date))
+                    //define style
+                    const styles = [boStyle]
+                    //define grid layer
+                    gridLayers.push(new gridviz.GridLayer(datasets.get(date), styles))
+                } else if (layerCode === 'cc1868' || layerCode === 'cc1878' || layerCode === 'cc1888' || layerCode === 'cc1900' || layerCode === 'cc1925' || layerCode === 'cc1937' || layerCode === 'cc2024') {
+                    const date = layerCode.replace('cc', '')
+                    const layerCode_ = 'Cell_cover ' + date
+                    console.log("date=",date,"layercode=",layerCode,"dataset=",datasets.get(date))
+                    //define style
+                    const styles = [ccStyle]
+                    //define grid layer
+                    gridLayers.push(new gridviz.GridLayer(datasets.get(date), styles))
+                } else {
+                    console.log('Unexpected layer code: ' + layerCode)
+                    return
+                }
+
+                //add layers to map
+                const layers = [backgroundLayer1]
+                    .concat(gridLayers)
+                map.layers = layers
+
+                //redraw
+                map.redraw()
+            }
+
+            //layer selection change
+            document.querySelector('#layer').addEventListener('change', function () {
+                const layerCode = document.querySelector('input[name="layer"]:checked').value
+                update()
+            })
+
+            //select layer from URL
+            const ls = gridviz.getParameterByName('lay')
+            if (ls) {
+                const b = document.querySelector('#' + ls)
+                if (b) b.checked = true
+            }
+
+            //initialise
+            update()
+        </script>
+
+        <div class="attribution">
+          <span>
+	    <a target="_blank" rel="nofollow noreferrer noopener" href="https://github.com/eurostat/gridviz">Gridviz</a>
+          </span>
+        </div>
+    </body>
+</html>
